@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Diamond...</title>
+		<link rel="stylesheet" href="./style.css">
+		<script type="text/javascript">
+			function clear(b){
+				var l=b.childNodes
+				for (var ci=l.length-1;ci>=0;ci--){
+					if (!l[ci].classList){
+						b.removeChild(l[ci])
+					}
+					else{
+						l[ci]=clear(l[ci])
+					}
+				}
+				return b
+			}
+			window.onload=function(){
+				var pr=clear(document.getElementsByClassName("diamond")[0]),tm=null
+				pr.lastChild.onmouseover=function(){
+					pr.classList.add("o")
+					pr.classList.remove("c")
+					if (tm!=null){clearTimeout(tm)}
+				}
+				pr.lastChild.onmouseout=function(){
+					pr.classList.add("c")
+					if (tm!=null){clearTimeout(tm)}
+					tm=setTimeout(function(){
+						pr.classList.remove("o")
+						pr.classList.remove("c")
+					},1500)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="diamond">
+			<div class="wr">
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+				<div class="w">
+					<div class="t">
+					</div>
+				</div>
+			</div>
+			<div class="bg">
+			</div>
+		</div>
+	</body>
+</html>
